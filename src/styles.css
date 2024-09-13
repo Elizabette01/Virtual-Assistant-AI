@@ -1,0 +1,157 @@
+* {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+body{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  color: aliceblue;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+ 
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to right, rgb(0, 8, 59), rgb(2, 41, 156));
+}
+
+.wrapper{ 
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.image-container {
+  border-radius: 50%;
+  width: 300px;
+  height: 280px;
+  overflow: hidden;
+  z-index: 10;
+  position: relative;
+  background: rgb(2, 41, 156);
+  z-index: 9;
+}
+
+.element {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  border-top: 40px solid rgb(0, 136, 255);
+}
+
+img {
+  width: 300px;
+  height: 280px;
+  object-position: center;
+  position: absolute;
+  z-index: 10;
+}
+
+.wrapper h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  text-align: center;
+
+}
+
+.wrapper p {
+  text-align: center;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.675rem;
+  z-index: 10;
+}
+
+.instructions button {
+  background: transparent;
+  border: none;
+  height: 50px;
+}
+
+button .bi {
+  font-size: 2rem;
+  color: aliceblue;
+}
+
+/* Active Microphone button */
+
+button .speak {
+  color: green;
+  animation: scale 2s linear infinite;
+}
+
+@keyframes scale {
+
+  0% {
+    font-size: 2rem;
+  }
+
+  50% {
+    font-size: 2.25rem;
+  }
+
+  100% {
+    font-size: 2rem;
+  }
+  
+}
+
+.instructions p {
+  font-size: 0.75rem;
+}
+
+/* css animation of drops */
+
+.drops i {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  top: 0;
+  z-index: 0;
+  animation: fall 5s linear infinite;
+}
+
+.drops i:nth-child(3n+1){
+  background: linear-gradient(transparent, rgb(208, 229, 248));
+}
+
+.drops i:nth-child(3n+2){
+  background: linear-gradient(transparent, rgb(0, 136, 255));
+}
+
+.drops i:nth-child(3n+3){
+  background: linear-gradient(transparent, rgb(0, 87, 163));
+}
+
+@keyframes fall {
+
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(calc(100vh + 100px));
+  }
+  
+}
